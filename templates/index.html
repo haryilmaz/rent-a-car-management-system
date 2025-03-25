@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Araç Listesi</h1>
+<div class="row">
+    {% for car in cars %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
+                <p class="card-text">
+                    Plaka: {{ car.plate }}<br>
+                    Yıl: {{ car.year }}<br>
+                    Günlük Ücret: {{ car.daily_rate }} TL<br>
+                    Durum: {% if car.is_available %}Müsait{% else %}Kirada{% endif %}
+                </p>
+                {% if car.is_available %}
+                <a href="{{ url_for('rent_car', car_id=car.id) }}" class="btn btn-primary">Kirala</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
