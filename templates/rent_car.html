@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ car.brand }} {{ car.model }} Kiralama</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Ad Soyad</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">E-posta</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Telefon</label>
+        <input type="tel" class="form-control" id="phone" name="phone" required>
+    </div>
+    <div class="mb-3">
+        <label for="start_date" class="form-label">Başlangıç Tarihi</label>
+        <input type="date" class="form-control" id="start_date" name="start_date" required>
+    </div>
+    <div class="mb-3">
+        <label for="end_date" class="form-label">Bitiş Tarihi</label>
+        <input type="date" class="form-control" id="end_date" name="end_date" required>
+    </div>
+    <div class="alert alert-info">
+        Günlük Ücret: {{ car.daily_rate }} TL
+    </div>
+    <button type="submit" class="btn btn-primary">Kirala</button>
+</form>
+{% endblock %}
