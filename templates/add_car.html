@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Yeni Araç Ekle</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label for="plate" class="form-label">Plaka</label>
+        <input type="text" class="form-control" id="plate" name="plate" required>
+    </div>
+    <div class="mb-3">
+        <label for="brand" class="form-label">Marka</label>
+        <input type="text" class="form-control" id="brand" name="brand" required>
+    </div>
+    <div class="mb-3">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="model" name="model" required>
+    </div>
+    <div class="mb-3">
+        <label for="year" class="form-label">Yıl</label>
+        <input type="number" class="form-control" id="year" name="year" required>
+    </div>
+    <div class="mb-3">
+        <label for="daily_rate" class="form-label">Günlük Ücret</label>
+        <input type="number" step="0.01" class="form-control" id="daily_rate" name="daily_rate" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Araç Ekle</button>
+</form>
+{% endblock %}
